@@ -190,7 +190,7 @@ async function run_one_test(test, verbose) {
 
     const alignment = get_alignment();
 
-    res = spawnSync('clang', ['-g', '-DC4WA_ALIGNMENT='+alignment, '-Wno-incompatible-library-redeclaration', '-o', tmp_exe, tmp_c].concat(test === '124-smoke' ? ['-Wno-literal-conversion'] : []), spawn_options);
+    res = spawnSync('clang', ['-g', '-lm', '-DC4WA_ALIGNMENT='+alignment, '-Wno-incompatible-library-redeclaration', '-o', tmp_exe, tmp_c].concat(test === '124-smoke' ? ['-Wno-literal-conversion'] : []), spawn_options);
     if (verbose)
         results[tid] = (res.status === 0) ? 2 : 1;
     else
@@ -378,7 +378,7 @@ async function run_c_file(cfile) {
 
     const alignment = get_alignment();
 
-    let res = spawnSync('clang', ['-g', '-DC4WA_ALIGNMENT='+alignment, '-O0', '-Wno-incompatible-library-redeclaration', '-o', tmp_exe, tmp_c], {stdio: 'inherit'});
+    let res = spawnSync('clang', ['-g', '-lm', '-DC4WA_ALIGNMENT='+alignment, '-O0', '-Wno-incompatible-library-redeclaration', '-o', tmp_exe, tmp_c], {stdio: 'inherit'});
 
     if (res.status !== 0) {
         console.error("❌ GCC compilation failed, not proceeding");
