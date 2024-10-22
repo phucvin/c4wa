@@ -19,7 +19,7 @@
     (local $b i32)
     (local $c i32)
     (local.set $@stack_entry (global.get $@stack))
-    (local.set $c (tee_local $a (i32.const 11)))
+    (local.set $c (local.tee $a (i32.const 11)))
     (local.set $b (i32.const -18))
     (i64.store align=8 (global.get $@stack) (i64.extend_i32_s (local.get $a)))
     (global.set $@stack (i32.add (global.get $@stack) (i32.const 8)))
