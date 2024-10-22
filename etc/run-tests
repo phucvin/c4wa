@@ -5,7 +5,6 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { spawnSync } = require("child_process");
-const colors = require('colors'); // unsafe, modifies String prototype
 const { wasm_printf } = require('./wasm-printf');
 
 const def_arr = [

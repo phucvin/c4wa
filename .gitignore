@@ -16,3 +16,6 @@ hs_err_pid*
 *.class
 *.o
 *.swp
+
+c4wa-compile-0.5
+node_modules
