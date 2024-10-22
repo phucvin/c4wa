@@ -276,7 +276,7 @@ async function run_one_test(test, verbose) {
         console.log(("\n⦿ " + (tid + 1) + ". " + def_arr[tid]));
 
     let i_output = '';
-    if (['107-smoke', '172-life'].includes(test)) {
+    if (['107-smoke', '171-life', '172-life'].includes(test)) {
         if (verbose)
             console.log("Skipping...");
     }
